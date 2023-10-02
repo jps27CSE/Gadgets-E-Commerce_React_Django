@@ -1,4 +1,4 @@
-# E-Commerce_React_Django
+# Gadgets-E-Commerce_React_Django
 
 ## Technologies Used:
 - React
