@@ -89,7 +89,56 @@ Now that your React + Vite project is set up, you can start using it:
 
 The default Vite configuration for React should work seamlessly with the chosen Fast Refresh plugin. If you need to make custom configurations, you can do so by editing the `vite.config.js` file. Refer to the [official Vite documentation](https://vitejs.dev/config/) for detailed configuration options.
 
-#### Technologies Used
+
+
+## Django Installation For Windows
+
+#### Prerequisites
+
+Before you start, ensure you have the following prerequisites installed on your system:
+
+- Python: [Installation Guide](https://www.python.org/downloads/)
+
+
+1. **Install virtual environment**
+
+         python -m pip install --user virtualenv
+
+2. **Setup virtual environment, where `<environment_name>` is replaced by your virtual environment name**
+
+         Gadgets-E-Commerce_React_Django\backend>  python -m venv <environment_name>
+
+3. **Activate virtual environment**
+
+         Gadgets-E-Commerce_React_Django\backend>  <environment_name>\Scripts\activate
+
+4. **After successfully activate virtual environment. Now, Install backend dependencies**
+
+         (<environment-name>) Gadgets-E-Commerce_React_Django\backend> pip install -r requirements.txt
+
+5. **Create makemigrations file**
+
+         (<environment-name>) Gadgets-E-Commerce_React_Django\backend> python manage.py makemigrations
+
+6. **Create database table**
+
+         (<environment-name>) Gadgets-E-Commerce_React_Django\backend> python manage.py migrate
+
+7. **Create superUser for control admin panel**
+
+         (<environment-name>) Gadgets-E-Commerce_React_Django\backend> python manage.py createsuperuser
+8. **After command No. (7) set your `username`, `email` and `password`, where `password` is invisible for you.**
+
+9. **Now run the server**
+
+         (<environment-name>) Gadgets-E-Commerce_React_Django\backend> python manage.py runserver
+
+10. **Now, your Django server is prepared to communicate with any other frontend.**
+
+
+
+
+### Technologies Used
 
 This project integrates several technologies:
 
@@ -101,7 +150,7 @@ This project integrates several technologies:
 
 Make sure to configure and utilize these technologies as needed for your project.
 
-#### Contributing
+### Contributing
 
 Contributions to this project are welcome! If you'd like to contribute:
 
@@ -111,13 +160,10 @@ Contributions to this project are welcome! If you'd like to contribute:
 4. Push your changes to your forked repository.
 5. Create a pull request to the original repository, detailing your changes.
 
-#### License
+### License
 
 This project is licensed under the [LICENSE_NAME](LICENSE_URL). Please review the license before using or contributing to the project.
 
 Feel free to reach out if you have any questions or need further assistance. Happy coding!
 
 
-
-
-# APi Collections
