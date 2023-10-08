@@ -26,6 +26,8 @@ class ProductImagesSerializer(serializers.ModelSerializer):
 
 
 class ProductSerializer(serializers.ModelSerializer):
+    
+    images = ProductImagesSerializer(many=True)
     brand = BrandSerializer()
     category = CategorySerializer()
     class Meta:
