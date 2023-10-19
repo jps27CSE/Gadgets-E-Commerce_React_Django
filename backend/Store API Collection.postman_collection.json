@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "fd36f104-404e-461e-a0c1-202793520d9a",
+		"name": "Store API Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16365646",
+		"_collection_link": "https://lunar-star-875150.postman.co/workspace/535ce1bb-50af-4686-88da-f2acf7fd88cd/collection/16365646-fd36f104-404e-461e-a0c1-202793520d9a?action=share&source=collection_link&creator=16365646"
+	},
+	"item": [
+		{
+			"name": "home slider list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://filesharingbd.pythonanywhere.com/store-api/homeslider-list/",
+					"protocol": "https",
+					"host": [
+						"filesharingbd",
+						"pythonanywhere",
+						"com"
+					],
+					"path": [
+						"store-api",
+						"homeslider-list",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://filesharingbd.pythonanywhere.com/store-api/product-list/",
+					"protocol": "https",
+					"host": [
+						"filesharingbd",
+						"pythonanywhere",
+						"com"
+					],
+					"path": [
+						"store-api",
+						"product-list",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "category list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://filesharingbd.pythonanywhere.com/store-api/category-list/",
+					"protocol": "https",
+					"host": [
+						"filesharingbd",
+						"pythonanywhere",
+						"com"
+					],
+					"path": [
+						"store-api",
+						"category-list",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "brand list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://filesharingbd.pythonanywhere.com/store-api/brand-list/",
+					"protocol": "https",
+					"host": [
+						"filesharingbd",
+						"pythonanywhere",
+						"com"
+					],
+					"path": [
+						"store-api",
+						"brand-list",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
