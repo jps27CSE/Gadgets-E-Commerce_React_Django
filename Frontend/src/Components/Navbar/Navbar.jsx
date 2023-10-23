@@ -1,8 +1,20 @@
-import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
   const [open, setOpen] = useState(true);
+  const { user, userSignOut } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate("/login");
+  };
+  const handleLogout = () => {
+    userSignOut()
+      .then(navigate("/login"))
+      .catch((err) => console.log(err.message));
+  };
   const links = (
     <>
       <li>
@@ -11,7 +23,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? " text-teal-700 bg-teal-200 rounded-md font-bold"
+              ? " text-teal-700 bg-teal-300 rounded-md font-bold"
               : ""
           }
           to="/"
@@ -26,7 +38,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? " text-teal-700 bg-teal-200 rounded-md font-bold"
+              ? " text-teal-700 bg-teal-300 rounded-md font-bold"
               : ""
           }
         >
@@ -76,13 +88,43 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
+
+        {/* Navbar End */}
         <div className="navbar-end">
-          <Link
-            to="/login"
-            className="px-5 py-2 bg-teal-300 font-medium rounded-lg hover:bg-teal-600 hover:text-white"
-          >
-            Login
-          </Link>
+          {user ? (
+            <div className="flex items-center space-x-3">
+              <div className="">
+                <img
+                  className="w-7 lg:w-10 h-7 lg:h-10 rounded-full ml-4 lg:ml-2"
+                  src={user?.photoURL}
+                  alt=""
+                />
+                <p className="text-xs font-logoFont text-center">
+                  {user?.displayName}
+                </p>
+              </div>
+              <button
+                onClick={handleLogout}
+                className="px-2 py-1 text-sm lg:text-base lg:px-5 lg:py-2 border hover:border-teal-700 border-teal-300 hover:bg-teal-400 hover:text-black font-medium rounded-md"
+              >
+                Sign Out
+              </button>
+            </div>
+          ) : (
+            <div className="flex items-center">
+              <img
+                className="w-7 lg:w-10 h-7 lg:h-10 rounded-full mr-3"
+                src="https://i.ibb.co/By0YFNn/default-profile-picture-grey-male-icon.png"
+                alt=""
+              />
+              <button
+                onClick={handleLogin}
+                className="px-2 py-1 text-sm lg:text-base lg:px-5 lg:py-2 bg-teal-600 hover:bg-teal-400 hover:text-black text-white rounded-md"
+              >
+                Sign In
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>
