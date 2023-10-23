@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from store.models import Product, Brand, Category, ProductImages
+from store.models import Product, Brand, Category, ProductImages, HomeSlider
 
 
 class BrandSerializer(serializers.ModelSerializer):
@@ -34,3 +34,9 @@ class ProductSerializer(serializers.ModelSerializer):
         model = Product
         fields = '__all__'
 
+
+class HomeSliderSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = HomeSlider
+        fields = '__all__'
