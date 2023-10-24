@@ -43,3 +43,11 @@ class ProductImages(models.Model):
 
     def __str__(self):
         return self.product.name
+
+
+class HomeSlider(models.Model):
+    text = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='sliders')
+
+    def __str__(self):
+        return self.text[:10]
